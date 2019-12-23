@@ -25,4 +25,4 @@ Logos at the bottom of the page can be clicked on to improve score until duplica
 My name is Alex I am a bootcamp student whose portfolio can be found
 [here](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/).
 
-I designed this app using existing APIs and packages listed in the **This App Utilizes** section. I used Node and Sequelize to query and route data in this app, and Handlebars to generate your HTML. The site is deployed to Heroku [here](https://click-game9.herokuapp.com/).
+I designed this app using existing APIs and packages listed in the **This App Utilizes** section. I used ReactJS for the front end and Bootstrap for an enhanced asethetic. The site is deployed to Heroku [here](https://click-game9.herokuapp.com/).
