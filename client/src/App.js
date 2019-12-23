@@ -1,15 +1,23 @@
 import React, { Component } from "react";
-import Thumbnail from './components/Thumbnail';
-import Score from './components/Score';
+import Thumbnail from "./components/Thumbnail";
+import Score from "./components/Score";
+import TopScore from "./components/TopScore";
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./index.css";
 
 class App extends Component {
-
   state = {
     tiles: [
-
-      'https://i.pinimg.com/originals/2e/d7/85/2ed785e9b43aca04eef9e62ab59b325d.jpg',
-      'https://i.pinimg.com/originals/7a/7e/ee/7a7eeeb13273cc58eb7ef6db5149a8e1.jpg',
-      'https://i.pinimg.com/originals/13/5a/0e/135a0e21b3142eac2caee8ea7032106c.jpg'
+      "/img/IMG1.png",
+      "/img/IMG2.png",
+      "/img/IMG3.png",
+      "/img/IMG4.png",
+      "/img/IMG5.png",
+      "/img/IMG6.png",
+      "/img/IMG7.png",
+      "/img/IMG8.png",
+      "/img/IMG9.png",
+      "/img/IMG10.png"
     ],
     // shuffled:[]
     score: 0,
@@ -18,30 +26,26 @@ class App extends Component {
 
   clickedTiles = [];
 
-  handleTileClick = (evt) => {
+  handleTileClick = evt => {
     //record click
-    console.log(evt)
+    console.log(evt);
 
     const clickedTile = evt.target.src;
 
-    
     if (this.clickedTiles.includes(clickedTile)) {
-this.clickedTiles.length = 0;
+      this.clickedTiles.length = 0;
       this.setState({ score: 0 });
       // alert('ERR already clicked score: ', this.state.score);
       return;
-
     }
 
     // this.setState({ score: this.state.score + 1 });
 
     const newScore = this.state.score + 1;
-    const topScore = newScore > this.state.topScore ?
-      newScore :
-      this.state.topScore;
+    const topScore =
+      newScore > this.state.topScore ? newScore : this.state.topScore;
 
     this.clickedTiles.push(clickedTile);
-
 
     const shuffled = this.state.tiles.sort(() => 0.5 - Math.random());
     this.setState({
@@ -49,20 +53,28 @@ this.clickedTiles.length = 0;
       score: newScore,
       topScore: topScore
     });
-  }
-
-
+  };
 
   render() {
     return (
       <div className="App">
-        <Score score={this.state.score} topScore={this.state.topScore} />
+        <div className="navbar" style={this.navbar}>
+          <div className="btn btn-info">
+            <h1>NBA Memory Click</h1>
+            <Score score={this.state.score} />
+          </div>
 
-        {
-          this.state.tiles.map((tile, idx) => <Thumbnail
-            src={tile} key={idx} onClick={this.handleTileClick}
-          />
-          )};
+          <div className="btn btn-info">
+            <h1>Can you out-click?</h1>
+            <TopScore topScore={this.state.topScore} />
+          </div>
+        </div>
+        <div className="jumbotron">
+          {this.state.tiles.map((tile, idx) => (
+            <Thumbnail src={tile} key={idx} onClick={this.handleTileClick} />
+          ))}
+          ;
+        </div>
       </div>
     );
   }
