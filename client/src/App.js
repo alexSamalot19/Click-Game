@@ -65,7 +65,7 @@ class App extends Component {
           </div>
 
           <div className="btn btn-info">
-            <h1>Can you out-click?</h1>
+            <h1>Can You Out-Click?</h1>
             <TopScore topScore={this.state.topScore} />
           </div>
         </div>
