@@ -1,29 +1,28 @@
-# Create React Express App
+# NBA Memory Click
 
-## About This Boilerplate
+<br>
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Description
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+NBA Memory Click is a game designed to test the memory of the user using popular NBA Teams. The user clicks an image without repeating any clicks. Logos are shuffled between clicks to make the game more challenging. The top score of the users session is displayed and replaced when beaten.
 
-## Starting the app locally
+<br>
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Run Instructions
 
-```
-npm install
-```
+Logos at the bottom of the page can be clicked on to improve score until duplicate reached:
 
-This should install node modules within the server and the client folder.
+![StartPage](client/public/img/StartPage.png)
 
-After both installations complete, run the following command in your terminal:
+## This App Utilizes
 
-```
-npm start
-```
+- [ReactJS](https://reactjs.org/)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+<br>
 
-## Deployment (Heroku)
+## Role in Development
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+My name is Alex I am a bootcamp student whose portfolio can be found
+[here](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/).
+
+I designed this app using existing APIs and packages listed in the **This App Utilizes** section. I used Node and Sequelize to query and route data in this app, and Handlebars to generate your HTML. The site is deployed to Heroku [here](https://click-game9.herokuapp.com/).
