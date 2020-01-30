@@ -3,7 +3,7 @@ import Thumbnail from "./components/Thumbnail";
 import Score from "./components/Score";
 import TopScore from "./components/TopScore";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./index.css";
+import "./index.css";
 
 class App extends Component {
   state = {
