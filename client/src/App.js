@@ -7,8 +7,8 @@ import "./index.css";
 
 class App extends Component {
   state = {
-    division: "Atlantic",
-    AtlanticTiles: [
+    conference: "Eastern",
+    EasternTiles: [
       "/img/IMG1.png",
       "/img/IMG2.png",
       "/img/IMG3.png",
@@ -20,7 +20,7 @@ class App extends Component {
       "/img/IMG9.png",
       "/img/IMG10.png"
     ],
-    PacificTiles: [
+    WesternTiles: [
       "/img/IMG11.png",
       "/img/IMG12.png",
       "/img/IMG13.png",
@@ -68,12 +68,12 @@ class App extends Component {
     });
   };
 
-  handleAtlanticClick = event => {
-    this.setState({ division: "Atlantic" });
+  handleEasternClick = event => {
+    this.setState({ conference: "Eastern" });
   };
 
-  handlePacificClick = event => {
-    this.setState({ division: "Pacific" });
+  handleWesternClick = event => {
+    this.setState({ conference: "Western" });
   };
 
   render() {
@@ -92,24 +92,24 @@ class App extends Component {
         </div>
 
         <div className="jumbotron">
-          <h1>Click Division for tiles</h1>
+          <h1>Click Conference for Tiles</h1>
           <div
             className="btn btn-primary btn-sm"
-            onClick={this.handleAtlanticClick}
+            onClick={this.handleEasternClick}
           >
-            <h1>Atlantic</h1>
+            <h1>Eastern</h1>
           </div>
           <div
             className="btn btn-warning btn-sm"
-            onClick={this.handlePacificClick}
+            onClick={this.handleWesternClick}
           >
-            <h1>Pacific</h1>
+            <h1>Western</h1>
           </div>
           {//Check if message failed
-          this.state.division === "Atlantic" ? (
+          this.state.conference === "Eastern" ? (
             <div>
               {" "}
-              {this.state.AtlanticTiles.map((tile, idx) => (
+              {this.state.EasternTiles.map((tile, idx) => (
                 <Thumbnail
                   src={tile}
                   key={idx}
@@ -120,7 +120,7 @@ class App extends Component {
           ) : (
             <div>
               {" "}
-              {this.state.PacificTiles.map((tile, idx) => (
+              {this.state.WesternTiles.map((tile, idx) => (
                 <Thumbnail
                   src={tile}
                   key={idx}
