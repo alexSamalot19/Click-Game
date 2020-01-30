@@ -7,7 +7,8 @@ import "./index.css";
 
 class App extends Component {
   state = {
-    tiles: [
+    division: "Atlantic",
+    AtlanticTiles: [
       "/img/IMG1.png",
       "/img/IMG2.png",
       "/img/IMG3.png",
@@ -18,6 +19,18 @@ class App extends Component {
       "/img/IMG8.png",
       "/img/IMG9.png",
       "/img/IMG10.png"
+    ],
+    PacificTiles: [
+      "/img/IMG11.png",
+      "/img/IMG12.png",
+      "/img/IMG13.png",
+      "/img/IMG14.png",
+      "/img/IMG15.png",
+      "/img/IMG16.png",
+      "/img/IMG17.png",
+      "/img/IMG18.png",
+      "/img/IMG19.png",
+      "/img/IMG20.png"
     ],
     // shuffled:[]
     score: 0,
@@ -55,6 +68,14 @@ class App extends Component {
     });
   };
 
+  handleAtlanticClick = event => {
+    this.setState({ division: "Atlantic" });
+  };
+
+  handlePacificClick = event => {
+    this.setState({ division: "Pacific" });
+  };
+
   render() {
     return (
       <div className="App">
@@ -69,10 +90,45 @@ class App extends Component {
             <TopScore topScore={this.state.topScore} />
           </div>
         </div>
+
         <div className="jumbotron">
-          {this.state.tiles.map((tile, idx) => (
-            <Thumbnail src={tile} key={idx} onClick={this.handleTileClick} />
-          ))}
+          <h1>Click Division for tiles</h1>
+          <div
+            className="btn btn-primary btn-sm"
+            onClick={this.handleAtlanticClick}
+          >
+            <h1>Atlantic</h1>
+          </div>
+          <div
+            className="btn btn-warning btn-sm"
+            onClick={this.handlePacificClick}
+          >
+            <h1>Pacific</h1>
+          </div>
+          {//Check if message failed
+          this.state.division === "Atlantic" ? (
+            <div>
+              {" "}
+              {this.state.AtlanticTiles.map((tile, idx) => (
+                <Thumbnail
+                  src={tile}
+                  key={idx}
+                  onClick={this.handleTileClick}
+                />
+              ))}
+            </div>
+          ) : (
+            <div>
+              {" "}
+              {this.state.PacificTiles.map((tile, idx) => (
+                <Thumbnail
+                  src={tile}
+                  key={idx}
+                  onClick={this.handleTileClick}
+                />
+              ))}{" "}
+            </div>
+          )}
           ;
         </div>
       </div>
