@@ -59,13 +59,21 @@ class App extends Component {
       newScore > this.state.topScore ? newScore : this.state.topScore;
 
     this.clickedTiles.push(clickedTile);
-
-    const shuffled = this.state.tiles.sort(() => 0.5 - Math.random());
-    this.setState({
-      tiles: shuffled,
-      score: newScore,
-      topScore: topScore
-    });
+    if (this.state.conference === "Eastern") {
+      const shuffled = this.state.EasternTiles.sort(() => 0.5 - Math.random());
+      this.setState({
+        EasternTiles: shuffled,
+        score: newScore,
+        topScore: topScore
+      });
+    } else {
+      const shuffled = this.state.WesternTiles.sort(() => 0.5 - Math.random());
+      this.setState({
+        WesternTiles: shuffled,
+        score: newScore,
+        topScore: topScore
+      });
+    }
   };
 
   handleEasternClick = event => {
