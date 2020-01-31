@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Thumbnail from "./components/Thumbnail";
 import Navbar from "./components/Navbar/Navbar";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -89,12 +88,12 @@ class App extends Component {
       <div className="App">
         <Navbar score={this.state.score} topScore={this.state.topScore} />
         <Jumbotron
-          handleEasternClick={this.state.handleEasternClick}
-          handleWesternClick={this.state.handleWesternClick}
+          handleEasternClick={this.handleEasternClick}
+          handleWesternClick={this.handleWesternClick}
           conference={this.state.conference}
           EasternTiles={this.state.EasternTiles}
           WesternTiles={this.state.WesternTiles}
-          handleTileClick={this.state.handleTileClick}
+          handleTileClick={this.handleTileClick}
         />
       </div>
     );
