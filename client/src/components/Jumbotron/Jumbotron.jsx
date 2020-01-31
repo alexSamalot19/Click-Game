@@ -28,7 +28,7 @@ const Jumbotron = props => (
           <Thumbnail
             src={tile}
             key={idx}
-            onClick={() => props.handleTileClick}
+            onClick={evt => props.handleTileClick(evt)}
           />
         ))}
       </div>
@@ -39,7 +39,7 @@ const Jumbotron = props => (
           <Thumbnail
             src={tile}
             key={idx}
-            onClick={() => props.handleTileClick}
+            onClick={evt => props.handleTileClick(evt)}
           />
         ))}{" "}
       </div>
