@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Thumbnail from "./components/Thumbnail";
 import Navbar from "./components/Navbar/Navbar";
+import Jumbotron from "./components/Jumbotron/Jumbotron";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
@@ -87,47 +88,14 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar score={this.state.score} topScore={this.state.topScore} />
-
-        <div className="jumbotron">
-          <h1>Click Conference for Tiles</h1>
-          <div
-            className="btn btn-primary btn-sm"
-            onClick={this.handleEasternClick}
-          >
-            <h1>Eastern</h1>
-          </div>
-          <div
-            className="btn btn-warning btn-sm"
-            onClick={this.handleWesternClick}
-          >
-            <h1>Western</h1>
-          </div>
-          {//Check if message failed
-          this.state.conference === "Eastern" ? (
-            <div>
-              {" "}
-              {this.state.EasternTiles.map((tile, idx) => (
-                <Thumbnail
-                  src={tile}
-                  key={idx}
-                  onClick={this.handleTileClick}
-                />
-              ))}
-            </div>
-          ) : (
-            <div>
-              {" "}
-              {this.state.WesternTiles.map((tile, idx) => (
-                <Thumbnail
-                  src={tile}
-                  key={idx}
-                  onClick={this.handleTileClick}
-                />
-              ))}{" "}
-            </div>
-          )}
-          ;
-        </div>
+        <Jumbotron
+          handleEasternClick={this.state.handleEasternClick}
+          handleWesternClick={this.state.handleWesternClick}
+          conference={this.state.conference}
+          EasternTiles={this.state.EasternTiles}
+          WesternTiles={this.state.WesternTiles}
+          handleTileClick={this.state.handleTileClick}
+        />
       </div>
     );
   }
