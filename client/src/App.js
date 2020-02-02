@@ -31,7 +31,6 @@ class App extends Component {
       "/img/IMG19.png",
       "/img/IMG20.png"
     ],
-    // shuffled:[]
     score: 0,
     topScore: 0
   };
@@ -47,11 +46,8 @@ class App extends Component {
     if (this.clickedTiles.includes(clickedTile)) {
       this.clickedTiles.length = 0;
       this.setState({ score: 0 });
-      // alert('ERR already clicked score: ', this.state.score);
       return;
     }
-
-    // this.setState({ score: this.state.score + 1 });
 
     const newScore = this.state.score + 1;
     const topScore =
