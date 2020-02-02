@@ -1,9 +1,6 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
-// import Score from "../Score";
-// import TopScore from "../TopScore";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./Navbar.css";
 
 const Jumbotron = props => (
   <div className="jumbotron">
